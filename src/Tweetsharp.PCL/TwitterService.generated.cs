@@ -825,6 +825,164 @@ namespace TweetSharp
 		Task<TwitterResponse<TwitterUser>> ReportSpamAsync(ReportSpamOptions options);
 		#endregion
 	}
+
+	public partial interface ITwitterService
+	{
+		#region synchronous Methods
+        
+		TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsMentioningMe(ListTweetsMentioningMeOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsOnUserTimeline(ListTweetsOnUserTimelineOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsOnHomeTimeline(ListTweetsOnHomeTimelineOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterStatus>> ListRetweetsOfMyTweets(ListRetweetsOfMyTweetsOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterStatus>> Retweets(RetweetsOptions options);
+        
+		TwitterResponse<TwitterStatus> GetTweet(GetTweetOptions options);
+        
+		TwitterResponse<TwitterStatus> DeleteTweet(DeleteTweetOptions options);
+        
+		TwitterResponse<TwitterStatus> SendTweet(SendTweetOptions options);
+        
+		TwitterResponse<TwitterStatus> Retweet(RetweetOptions options);
+        
+		TwitterResponse<TwitterStatus> SendTweetWithMedia(SendTweetWithMediaOptions options);
+        
+		TwitterResponse<TwitterSearchResult> Search(SearchOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterDirectMessage>> ListDirectMessagesReceived(ListDirectMessagesReceivedOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterDirectMessage>> ListDirectMessagesSent(ListDirectMessagesSentOptions options);
+        
+		TwitterResponse<TwitterDirectMessage> GetDirectMessage(GetDirectMessageOptions options);
+        
+		TwitterResponse<TwitterDirectMessage> DeleteDirectMessage(DeleteDirectMessageOptions options);
+        
+		TwitterResponse<TwitterDirectMessage> SendDirectMessage(SendDirectMessageOptions options);
+        
+		TwitterResponse<TwitterCursorList<long>> ListFriendIdsOf(ListFriendIdsOfOptions options);
+        
+		TwitterResponse<TwitterCursorList<long>> ListFollowerIdsOf(ListFollowerIdsOfOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterFriendshipLookup>> ListFriendshipsFor(ListFriendshipsForOptions options);
+        
+		TwitterResponse<TwitterCursorList<long>> GetIncomingFriendRequests(GetIncomingFriendRequestsOptions options);
+        
+		TwitterResponse<TwitterCursorList<long>> GetOutgoingFriendRequests(GetOutgoingFriendRequestsOptions options);
+        
+		TwitterResponse<TwitterUser> FollowUser(FollowUserOptions options);
+        
+		TwitterResponse<TwitterUser> UnfollowUser(UnfollowUserOptions options);
+        
+		TwitterResponse<TwitterFriendship> UpdateFriendship(UpdateFriendshipOptions options);
+        
+		TwitterResponse<TwitterFriendship> GetFriendshipInfo(GetFriendshipInfoOptions options);
+        
+		TwitterResponse<TwitterCursorList<TwitterUser>> ListFriends(ListFriendsOptions options);
+        
+		TwitterResponse<TwitterCursorList<TwitterUser>> ListFollowers(ListFollowersOptions options);
+        
+		TwitterResponse<TwitterAccount> GetAccountSettings();
+        
+		TwitterResponse<TwitterUser> GetUserProfile(GetUserProfileOptions options);
+        
+		TwitterResponse<TwitterUser> VerifyCredentials(VerifyCredentialsOptions options);
+        
+		TwitterResponse<TwitterAccount> UpdateAccountSettings(UpdateAccountSettingsOptions options);
+        
+		TwitterResponse<TwitterUser> UpdateDeliveryDevice(UpdateDeliveryDeviceOptions options);
+        
+		TwitterResponse<TwitterUser> UpdateProfile(UpdateProfileOptions options);
+        
+		TwitterResponse<TwitterUser> UpdateProfileBackgroundImage(UpdateProfileBackgroundImageOptions options);
+        
+		TwitterResponse<TwitterUser> UpdateProfileColors(UpdateProfileColorsOptions options);
+        
+		TwitterResponse<TwitterUser> UpdateProfileImage(UpdateProfileImageOptions options);
+        
+		TwitterResponse<TwitterCursorList<TwitterUser>> ListBlockedUsers(ListBlockedUsersOptions options);
+        
+		TwitterResponse<TwitterCursorList<long>> ListBlockedUserIds(ListBlockedUserIdsOptions options);
+        
+		TwitterResponse<TwitterUser> BlockUser(BlockUserOptions options);
+        
+		TwitterResponse<TwitterUser> UnblockUser(UnblockUserOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterUser>> ListUserProfilesFor(ListUserProfilesForOptions options);
+        
+		TwitterResponse<TwitterUser> GetUserProfileFor(GetUserProfileForOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterUser>> SearchForUser(SearchForUserOptions options);
+        
+		TwitterResponse<TwitterUserSuggestions> ListSuggestedUsers(ListSuggestedUsersOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterUserSuggestions>> ListSuggestedUserCategories(ListSuggestedUserCategoriesOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterUser>> GetSuggestedUserMembers(GetSuggestedUserMembersOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterStatus>> ListFavoriteTweets(ListFavoriteTweetsOptions options);
+        
+		TwitterResponse<TwitterStatus> UnfavoriteTweet(UnfavoriteTweetOptions options);
+        
+		TwitterResponse<TwitterStatus> FavoriteTweet(FavoriteTweetOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterList>> ListListsFor(ListListsForOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsOnList(ListTweetsOnListOptions options);
+        
+		TwitterResponse<TwitterUser> RemoveListMember(RemoveListMemberOptions options);
+        
+		TwitterResponse<TwitterCursorList<TwitterList>> ListListMembershipsFor(ListListMembershipsForOptions options);
+        
+		TwitterResponse<TwitterCursorList<TwitterUser>> ListListSubscribers(ListListSubscribersOptions options);
+        
+		TwitterResponse<TwitterUser> FollowList(FollowListOptions options);
+        
+		TwitterResponse<TwitterUser> VerifyListSubscription(VerifyListSubscriptionOptions options);
+        
+		TwitterResponse<TwitterUser> UnfollowList(UnfollowListOptions options);
+        
+		TwitterResponse<TwitterUser> VerifyListMembership(VerifyListMembershipOptions options);
+        
+		TwitterResponse<TwitterCursorList<TwitterUser>> ListListMembers(ListListMembersOptions options);
+        
+		TwitterResponse<TwitterUser> AddListMember(AddListMemberOptions options);
+        
+		TwitterResponse<TwitterList> DeleteList(DeleteListOptions options);
+        
+		TwitterResponse<TwitterList> CreateList(CreateListOptions options);
+        
+		TwitterResponse<TwitterList> GetList(GetListOptions options);
+        
+		TwitterResponse<TwitterCursorList<TwitterList>> ListSubscriptions(ListSubscriptionsOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterSavedSearch>> ListSavedSearches();
+        
+		TwitterResponse<TwitterSavedSearch> GetSavedSearch(GetSavedSearchOptions options);
+        
+		TwitterResponse<TwitterSavedSearch> CreateSavedSearch(CreateSavedSearchOptions options);
+        
+		TwitterResponse<TwitterSavedSearch> DeleteSavedSearch(DeleteSavedSearchOptions options);
+        
+		TwitterResponse<TwitterPlace> GetPlace(GetPlaceOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterPlace>> ReverseGeocode(ReverseGeocodeOptions options);
+        
+		TwitterResponse<IEnumerable<TwitterPlace>> GeoSearch(GeoSearchOptions options);
+        
+		TwitterResponse<TwitterTrends> ListLocalTrendsFor(ListLocalTrendsForOptions options);
+        
+		TwitterResponse<IEnumerable<WhereOnEarthLocation>> ListAvailableTrendsLocations();
+        
+		TwitterResponse<IEnumerable<WhereOnEarthLocation>> ListClosestTrendsLocations(ListClosestTrendsLocationsOptions options);
+        
+		TwitterResponse<TwitterRateLimitStatusSummary> GetRateLimitStatus(GetRateLimitStatusOptions options);
+        
+		TwitterResponse<TwitterUser> ReportSpam(ReportSpamOptions options);
+		#endregion
+	}
 #endregion
 }
 
@@ -1730,6 +1888,1062 @@ namespace TweetSharp
 				
 			
 			return ExecuteRequest<TwitterUser>(HttpMethod.Post, "users/report_spam", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id);
+		}
+
+		#endregion
+	}
+
+	public partial class TwitterService : ITwitterService
+	{	
+		#region Sequential Methods
+        
+		public virtual TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsMentioningMe(ListTweetsMentioningMeOptions options)
+		{
+			var count = options.Count;
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var trim_user = options.TrimUser;
+			var contributor_details = options.ContributorDetails;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterStatus>>("statuses/mentions_timeline", FormatAsString, "?count=", count, "&since_id=", since_id, "&max_id=", max_id, "&trim_user=", trim_user, "&contributor_details=", contributor_details, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsOnUserTimeline(ListTweetsOnUserTimelineOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var since_id = options.SinceId;
+			var count = options.Count;
+			var max_id = options.MaxId;
+			var trim_user = options.TrimUser;
+			var exclude_replies = options.ExcludeReplies;
+			var contributor_details = options.ContributorDetails;
+			var include_rts = options.IncludeRts;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterStatus>>("statuses/user_timeline", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&since_id=", since_id, "&count=", count, "&max_id=", max_id, "&trim_user=", trim_user, "&exclude_replies=", exclude_replies, "&contributor_details=", contributor_details, "&include_rts=", include_rts);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsOnHomeTimeline(ListTweetsOnHomeTimelineOptions options)
+		{
+			var count = options.Count;
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var trim_user = options.TrimUser;
+			var exclude_replies = options.ExcludeReplies;
+			var contributor_details = options.ContributorDetails;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterStatus>>("statuses/home_timeline", FormatAsString, "?count=", count, "&since_id=", since_id, "&max_id=", max_id, "&trim_user=", trim_user, "&exclude_replies=", exclude_replies, "&contributor_details=", contributor_details, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterStatus>> ListRetweetsOfMyTweets(ListRetweetsOfMyTweetsOptions options)
+		{
+			var count = options.Count;
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var trim_user = options.TrimUser;
+			var include_entities = options.IncludeEntities;
+			var include_user_entities = options.IncludeUserEntities;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterStatus>>("statuses/retweets_of_me", FormatAsString, "?count=", count, "&since_id=", since_id, "&max_id=", max_id, "&trim_user=", trim_user, "&include_entities=", include_entities, "&include_user_entities=", include_user_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterStatus>> Retweets(RetweetsOptions options)
+		{
+			var id = options.Id;
+			var count = options.Count;
+			var trim_user = options.TrimUser;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterStatus>>("statuses/retweets/{id}", FormatAsString, "?id=", id, "&count=", count, "&trim_user=", trim_user);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterStatus> GetTweet(GetTweetOptions options)
+		{
+			var id = options.Id;
+			var trim_user = options.TrimUser;
+			var include_my_retweet = options.IncludeMyRetweet;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<TwitterStatus>("statuses/show/{id}", FormatAsString, "?id=", id, "&trim_user=", trim_user, "&include_my_retweet=", include_my_retweet, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterStatus> DeleteTweet(DeleteTweetOptions options)
+		{
+			var id = options.Id;
+			var trim_user = options.TrimUser;
+				
+
+            var task = ExecuteRequest<TwitterStatus>(HttpMethod.Delete, "statuses/destroy/{id}", FormatAsString, "?id=", id, "&trim_user=", trim_user);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterStatus> SendTweet(SendTweetOptions options)
+		{
+			var status = options.Status;
+			var in_reply_to_status_id = options.InReplyToStatusId;
+			var lat = options.Lat;
+			var @long = options.@Long;
+			var place_id = options.PlaceId;
+			var display_coordinates = options.DisplayCoordinates;
+			var trim_user = options.TrimUser;
+				
+
+            var task = ExecuteRequest<TwitterStatus>(HttpMethod.Post, "statuses/update", FormatAsString, "?status=", status, "&in_reply_to_status_id=", in_reply_to_status_id, "&lat=", lat, "&long=", @long, "&place_id=", place_id, "&display_coordinates=", display_coordinates, "&trim_user=", trim_user);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterStatus> Retweet(RetweetOptions options)
+		{
+			var id = options.Id;
+			var trim_user = options.TrimUser;
+				
+
+            var task = ExecuteRequest<TwitterStatus>(HttpMethod.Post, "statuses/retweet/{id}", FormatAsString, "?id=", id, "&trim_user=", trim_user);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterStatus> SendTweetWithMedia(SendTweetWithMediaOptions options)
+		{
+			var status = options.Status;
+			var possibly_sensitive = options.PossiblySensitive;
+			var in_reply_to_status_id = options.InReplyToStatusId;
+			var lat = options.Lat;
+			var @long = options.@Long;
+			var place_id = options.PlaceId;
+			var display_coordinates = options.DisplayCoordinates;
+			 var images = options.Images;
+				
+
+            var task = ExecuteRequest<TwitterStatus>(HttpMethod.Post, "statuses/update_with_media", images, FormatAsString, "?status=", status, "&possibly_sensitive=", possibly_sensitive, "&in_reply_to_status_id=", in_reply_to_status_id, "&lat=", lat, "&long=", @long, "&place_id=", place_id, "&display_coordinates=", display_coordinates);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterSearchResult> Search(SearchOptions options)
+		{
+			var q = options.Q;
+			var geocode = options.Geocode;
+			var lang = options.Lang;
+			var locale = options.Locale;
+			var resultType = options.Resulttype;
+			var count = options.Count;
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var include_entities = options.IncludeEntities;
+			var callback = options.Callback;
+				
+
+            var task = ExecuteRequest<TwitterSearchResult>("search/tweets", FormatAsString, "?q=", q, "&geocode=", geocode, "&lang=", lang, "&locale=", locale, "&result_type=", resultType, "&count=", count, "&since_id=", since_id, "&max_id=", max_id, "&include_entities=", include_entities, "&callback=", callback);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterDirectMessage>> ListDirectMessagesReceived(ListDirectMessagesReceivedOptions options)
+		{
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var count = options.Count;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterDirectMessage>>("direct_messages", FormatAsString, "?since_id=", since_id, "&max_id=", max_id, "&count=", count, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterDirectMessage>> ListDirectMessagesSent(ListDirectMessagesSentOptions options)
+		{
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var count = options.Count;
+			var page = options.Page;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterDirectMessage>>("direct_messages/sent", FormatAsString, "?since_id=", since_id, "&max_id=", max_id, "&count=", count, "&page=", page, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterDirectMessage> GetDirectMessage(GetDirectMessageOptions options)
+		{
+			var id = options.Id;
+				
+
+            var task = ExecuteRequest<TwitterDirectMessage>("direct_messages/show", FormatAsString, "?id=", id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterDirectMessage> DeleteDirectMessage(DeleteDirectMessageOptions options)
+		{
+			var id = options.Id;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<TwitterDirectMessage>(HttpMethod.Post, "direct_messages/destroy", FormatAsString, "?id=", id, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterDirectMessage> SendDirectMessage(SendDirectMessageOptions options)
+		{
+			var text = options.Text;
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+				
+
+            var task = ExecuteRequest<TwitterDirectMessage>(HttpMethod.Post, "direct_messages/new", FormatAsString, "?text=", text, "&user_id=", user_id, "&screen_name=", screen_name);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<long>> ListFriendIdsOf(ListFriendIdsOfOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var cursor = options.Cursor;
+			var count = options.Count;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<long>>("friends/ids", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&cursor=", cursor, "&count=", count);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<long>> ListFollowerIdsOf(ListFollowerIdsOfOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var cursor = options.Cursor;
+			var count = options.Count;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<long>>("followers/ids", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&cursor=", cursor, "&count=", count);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterFriendshipLookup>> ListFriendshipsFor(ListFriendshipsForOptions options)
+		{
+			var screen_name = options.ScreenName;
+			var user_id = options.UserId;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterFriendshipLookup>>("friendships/lookup", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<long>> GetIncomingFriendRequests(GetIncomingFriendRequestsOptions options)
+		{
+			var cursor = options.Cursor;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<long>>("friendships/incoming", FormatAsString, "?cursor=", cursor);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<long>> GetOutgoingFriendRequests(GetOutgoingFriendRequestsOptions options)
+		{
+			var cursor = options.Cursor;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<long>>("friendships/outgoing", FormatAsString, "?cursor=", cursor);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> FollowUser(FollowUserOptions options)
+		{
+			var screen_name = options.ScreenName;
+			var user_id = options.UserId;
+			var follow = options.Follow;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "friendships/create", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id, "&follow=", follow);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UnfollowUser(UnfollowUserOptions options)
+		{
+			var screen_name = options.ScreenName;
+			var user_id = options.UserId;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "friendships/destroy", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterFriendship> UpdateFriendship(UpdateFriendshipOptions options)
+		{
+			var screen_name = options.ScreenName;
+			var user_id = options.UserId;
+			var device = options.Device;
+			var retweets = options.Retweets;
+				
+
+            var task = ExecuteRequest<TwitterFriendship>(HttpMethod.Post, "friendships/update", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id, "&device=", device, "&retweets=", retweets);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterFriendship> GetFriendshipInfo(GetFriendshipInfoOptions options)
+		{
+			var source_id = options.SourceId;
+			var source_screen_name = options.SourceScreenName;
+			var target_id = options.TargetId;
+			var target_screen_name = options.TargetScreenName;
+				
+
+            var task = ExecuteRequest<TwitterFriendship>("friendships/show", FormatAsString, "?source_id=", source_id, "&source_screen_name=", source_screen_name, "&target_id=", target_id, "&target_screen_name=", target_screen_name);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<TwitterUser>> ListFriends(ListFriendsOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var cursor = options.Cursor;
+			var skip_status = options.SkipStatus;
+			var include_user_entities = options.IncludeUserEntities;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<TwitterUser>>("friends/list", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&cursor=", cursor, "&skip_status=", skip_status, "&include_user_entities=", include_user_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<TwitterUser>> ListFollowers(ListFollowersOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var cursor = options.Cursor;
+			var skip_status = options.SkipStatus;
+			var include_user_entities = options.IncludeUserEntities;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<TwitterUser>>("followers/list", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&cursor=", cursor, "&skip_status=", skip_status, "&include_user_entities=", include_user_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterAccount> GetAccountSettings()
+		{
+				
+
+            var task = ExecuteRequest<TwitterAccount>("account/settings", FormatAsString);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> GetUserProfile(GetUserProfileOptions options)
+		{
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>("account/verify_credentials", FormatAsString, "?include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> VerifyCredentials(VerifyCredentialsOptions options)
+		{
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>("account/verify_credentials", FormatAsString, "?include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterAccount> UpdateAccountSettings(UpdateAccountSettingsOptions options)
+		{
+			var trend_location_woeid = options.TrendLocationWoeid;
+			var sleep_time_enabled = options.SleepTimeEnabled;
+			var start_sleep_time = options.StartSleepTime;
+			var end_sleep_time = options.EndSleepTime;
+			var time_zone = options.TimeZone;
+			var lang = options.Lang;
+				
+
+            var task = ExecuteRequest<TwitterAccount>(HttpMethod.Post, "account/settings", FormatAsString, "?trend_location_woeid=", trend_location_woeid, "&sleep_time_enabled=", sleep_time_enabled, "&start_sleep_time=", start_sleep_time, "&end_sleep_time=", end_sleep_time, "&time_zone=", time_zone, "&lang=", lang);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UpdateDeliveryDevice(UpdateDeliveryDeviceOptions options)
+		{
+			var device = options.Device;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<TwitterUser>("account/update_delivery_device", FormatAsString, "?device=", device, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UpdateProfile(UpdateProfileOptions options)
+		{
+			var name = options.Name;
+			var url = options.Url;
+			var location = options.Location;
+			var description = options.Description;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "account/update_profile", FormatAsString, "?name=", name, "&url=", url, "&location=", location, "&description=", description, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UpdateProfileBackgroundImage(UpdateProfileBackgroundImageOptions options)
+		{
+			var imagePath = options.Imagepath;
+			var tile = options.Tile;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+			var use = options.Use;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "account/update_profile_background_image", FormatAsString, "?image_path=", imagePath, "&tile=", tile, "&include_entities=", include_entities, "&skip_status=", skip_status, "&use=", use);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UpdateProfileColors(UpdateProfileColorsOptions options)
+		{
+			var profile_background_color = options.ProfileBackgroundColor;
+			var profile_link_color = options.ProfileLinkColor;
+			var profile_sidebar_border_color = options.ProfileSidebarBorderColor;
+			var profile_sidebar_fill_color = options.ProfileSidebarFillColor;
+			var profile_text_color = options.ProfileTextColor;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "account/update_profile_colors", FormatAsString, "?profile_background_color=", profile_background_color, "&profile_link_color=", profile_link_color, "&profile_sidebar_border_color=", profile_sidebar_border_color, "&profile_sidebar_fill_color=", profile_sidebar_fill_color, "&profile_text_color=", profile_text_color, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UpdateProfileImage(UpdateProfileImageOptions options)
+		{
+			var image_path = options.ImagePath;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "account/update_profile_image", FormatAsString, "?image_path=", image_path, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<TwitterUser>> ListBlockedUsers(ListBlockedUsersOptions options)
+		{
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+			var cursor = options.Cursor;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<TwitterUser>>("blocks/list", FormatAsString, "?include_entities=", include_entities, "&skip_status=", skip_status, "&cursor=", cursor);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<long>> ListBlockedUserIds(ListBlockedUserIdsOptions options)
+		{
+			var cursor = options.Cursor;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<long>>("blocks/ids", FormatAsString, "?cursor=", cursor);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> BlockUser(BlockUserOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "blocks/create", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UnblockUser(UnblockUserOptions options)
+		{
+			var screen_name = options.ScreenName;
+			var user_id = options.UserId;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "blocks/destroy", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterUser>> ListUserProfilesFor(ListUserProfilesForOptions options)
+		{
+			var screen_name = options.ScreenName;
+			var user_id = options.UserId;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterUser>>("users/lookup", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> GetUserProfileFor(GetUserProfileForOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<TwitterUser>("users/show", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterUser>> SearchForUser(SearchForUserOptions options)
+		{
+			var q = options.Q;
+			var page = options.Page;
+			var count = options.Count;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterUser>>("users/search", FormatAsString, "?q=", q, "&page=", page, "&count=", count, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUserSuggestions> ListSuggestedUsers(ListSuggestedUsersOptions options)
+		{
+			var slug = options.Slug;
+			var lang = options.Lang;
+				
+
+            var task = ExecuteRequest<TwitterUserSuggestions>("/users/suggestions/{slug}", FormatAsString, "?slug=", slug, "&lang=", lang);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterUserSuggestions>> ListSuggestedUserCategories(ListSuggestedUserCategoriesOptions options)
+		{
+			var lang = options.Lang;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterUserSuggestions>>("users/suggestions", FormatAsString, "?lang=", lang);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterUser>> GetSuggestedUserMembers(GetSuggestedUserMembersOptions options)
+		{
+			var slug = options.Slug;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterUser>>("/users/suggestions/{slug}/members", FormatAsString, "?slug=", slug);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterStatus>> ListFavoriteTweets(ListFavoriteTweetsOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var count = options.Count;
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterStatus>>("favorites/list", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&count=", count, "&since_id=", since_id, "&max_id=", max_id, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterStatus> UnfavoriteTweet(UnfavoriteTweetOptions options)
+		{
+			var id = options.Id;
+				
+
+            var task = ExecuteRequest<TwitterStatus>(HttpMethod.Post, "favorites/destroy", FormatAsString, "?id=", id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterStatus> FavoriteTweet(FavoriteTweetOptions options)
+		{
+			var id = options.Id;
+			var include_entities = options.IncludeEntities;
+				
+
+            var task = ExecuteRequest<TwitterStatus>(HttpMethod.Post, "favorites/create", FormatAsString, "?id=", id, "&include_entities=", include_entities);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterList>> ListListsFor(ListListsForOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterList>>("lists/list", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterStatus>> ListTweetsOnList(ListTweetsOnListOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+			var since_id = options.SinceId;
+			var max_id = options.MaxId;
+			var count = options.Count;
+			var include_entities = options.IncludeEntities;
+			var include_rts = options.IncludeRts;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterStatus>>("lists/statuses", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id, "&since_id=", since_id, "&max_id=", max_id, "&count=", count, "&include_entities=", include_entities, "&include_rts=", include_rts);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> RemoveListMember(RemoveListMemberOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "lists/members/destroy", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&user_id=", user_id, "&screen_name=", screen_name, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<TwitterList>> ListListMembershipsFor(ListListMembershipsForOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var cursor = options.Cursor;
+			var filter_to_owned_lists = options.FilterToOwnedLists;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<TwitterList>>("lists/memberships", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&cursor=", cursor, "&filter_to_owned_lists=", filter_to_owned_lists);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<TwitterUser>> ListListSubscribers(ListListSubscribersOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+			var cursor = options.Cursor;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<TwitterUser>>("lists/subscribers", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id, "&cursor=", cursor, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> FollowList(FollowListOptions options)
+		{
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+			var list_id = options.ListId;
+			var slug = options.Slug;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "lists/subscribers/create", FormatAsString, "?owner_screen_name=", owner_screen_name, "&owner_id=", owner_id, "&list_id=", list_id, "&slug=", slug);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> VerifyListSubscription(VerifyListSubscriptionOptions options)
+		{
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>("lists/subscribers/show", FormatAsString, "?owner_screen_name=", owner_screen_name, "&owner_id=", owner_id, "&list_id=", list_id, "&slug=", slug, "&user_id=", user_id, "&screen_name=", screen_name, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> UnfollowList(UnfollowListOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "lists/subscribers/destroy", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> VerifyListMembership(VerifyListMembershipOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterUser>("lists/members/show", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&user_id=", user_id, "&screen_name=", screen_name, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<TwitterUser>> ListListMembers(ListListMembersOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+			var cursor = options.Cursor;
+			var include_entities = options.IncludeEntities;
+			var skip_status = options.SkipStatus;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<TwitterUser>>("lists/members", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id, "&cursor=", cursor, "&include_entities=", include_entities, "&skip_status=", skip_status);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> AddListMember(AddListMemberOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "lists/members/create", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&user_id=", user_id, "&screen_name=", screen_name, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterList> DeleteList(DeleteListOptions options)
+		{
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+			var list_id = options.ListId;
+			var slug = options.Slug;
+				
+
+            var task = ExecuteRequest<TwitterList>(HttpMethod.Post, "lists/destroy", FormatAsString, "?owner_screen_name=", owner_screen_name, "&owner_id=", owner_id, "&list_id=", list_id, "&slug=", slug);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterList> CreateList(CreateListOptions options)
+		{
+			var list_owner = options.ListOwner;
+			var name = options.Name;
+			var mode = options.Mode;
+			var description = options.Description;
+				
+
+            var task = ExecuteRequest<TwitterList>(HttpMethod.Post, "lists/create", FormatAsString, "?list_owner=", list_owner, "&name=", name, "&mode=", mode, "&description=", description);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterList> GetList(GetListOptions options)
+		{
+			var list_id = options.ListId;
+			var slug = options.Slug;
+			var owner_screen_name = options.OwnerScreenName;
+			var owner_id = options.OwnerId;
+				
+
+            var task = ExecuteRequest<TwitterList>("lists/show", FormatAsString, "?list_id=", list_id, "&slug=", slug, "&owner_screen_name=", owner_screen_name, "&owner_id=", owner_id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterCursorList<TwitterList>> ListSubscriptions(ListSubscriptionsOptions options)
+		{
+			var user_id = options.UserId;
+			var screen_name = options.ScreenName;
+			var count = options.Count;
+			var cursor = options.Cursor;
+				
+
+            var task = ExecuteRequest<TwitterCursorList<TwitterList>>("lists/subscriptions", FormatAsString, "?user_id=", user_id, "&screen_name=", screen_name, "&count=", count, "&cursor=", cursor);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterSavedSearch>> ListSavedSearches()
+		{
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterSavedSearch>>("saved_searches/list", FormatAsString);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterSavedSearch> GetSavedSearch(GetSavedSearchOptions options)
+		{
+			var id = options.Id;
+				
+
+            var task = ExecuteRequest<TwitterSavedSearch>("saved_searches/show/{id}", FormatAsString, "?id=", id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterSavedSearch> CreateSavedSearch(CreateSavedSearchOptions options)
+		{
+			var query = options.Query;
+				
+
+            var task = ExecuteRequest<TwitterSavedSearch>(HttpMethod.Post, "saved_searches/create", FormatAsString, "?query=", query);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterSavedSearch> DeleteSavedSearch(DeleteSavedSearchOptions options)
+		{
+			var id = options.Id;
+				
+
+            var task = ExecuteRequest<TwitterSavedSearch>(HttpMethod.Post, "saved_searches/destroy/{id}", FormatAsString, "?id=", id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterPlace> GetPlace(GetPlaceOptions options)
+		{
+			var place_id = options.PlaceId;
+				
+
+            var task = ExecuteRequest<TwitterPlace>("geo/id/{place_id}", FormatAsString, "?place_id=", place_id);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterPlace>> ReverseGeocode(ReverseGeocodeOptions options)
+		{
+			var lat = options.Lat;
+			var @long = options.@Long;
+			var accuracy = options.Accuracy;
+			var granularity = options.Granularity;
+			var max_results = options.MaxResults;
+			var callback = options.Callback;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterPlace>>("geo/reverse_geocode", FormatAsString, "?lat=", lat, "&long=", @long, "&accuracy=", accuracy, "&granularity=", granularity, "&max_results=", max_results, "&callback=", callback);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<TwitterPlace>> GeoSearch(GeoSearchOptions options)
+		{
+			var lat = options.Lat;
+			var @long = options.@Long;
+			var query = options.Query;
+			var ip = options.Ip;
+			var granularity = options.Granularity;
+			var accuracy = options.Accuracy;
+			var max_results = options.MaxResults;
+			var contained_within = options.ContainedWithin;
+			var callback = options.Callback;
+				
+
+            var task = ExecuteRequest<IEnumerable<TwitterPlace>>("geo/search", FormatAsString, "?lat=", lat, "&long=", @long, "&query=", query, "&ip=", ip, "&granularity=", granularity, "&accuracy=", accuracy, "&max_results=", max_results, "&contained_within=", contained_within, "&callback=", callback);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterTrends> ListLocalTrendsFor(ListLocalTrendsForOptions options)
+		{
+			var id = options.Id;
+			var exclude = options.Exclude;
+				
+
+            var task = ExecuteRequest<TwitterTrends>("trends/place", FormatAsString, "?id=", id, "&exclude=", exclude);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<WhereOnEarthLocation>> ListAvailableTrendsLocations()
+		{
+				
+
+            var task = ExecuteRequest<IEnumerable<WhereOnEarthLocation>>("trends/available", FormatAsString);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<IEnumerable<WhereOnEarthLocation>> ListClosestTrendsLocations(ListClosestTrendsLocationsOptions options)
+		{
+			var lat = options.Lat;
+			var @long = options.@Long;
+				
+
+            var task = ExecuteRequest<IEnumerable<WhereOnEarthLocation>>("trends/closest", FormatAsString, "?lat=", lat, "&long=", @long);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterRateLimitStatusSummary> GetRateLimitStatus(GetRateLimitStatusOptions options)
+		{
+			var resources = options.Resources;
+				
+
+            var task = ExecuteRequest<TwitterRateLimitStatusSummary>("application/rate_limit_status", FormatAsString, "?resources=", resources);			
+
+			return task.Result;
+		}
+
+        
+		public virtual TwitterResponse<TwitterUser> ReportSpam(ReportSpamOptions options)
+		{
+			var screen_name = options.ScreenName;
+			var user_id = options.UserId;
+				
+
+            var task = ExecuteRequest<TwitterUser>(HttpMethod.Post, "users/report_spam", FormatAsString, "?screen_name=", screen_name, "&user_id=", user_id);			
+
+			return task.Result;
 		}
 
 		#endregion
